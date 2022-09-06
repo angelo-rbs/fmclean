@@ -80,7 +80,15 @@ end
 theorem disj_as_impl :
   (P ∨ Q) → (¬P → Q)  :=
 begin
-  sorry,
+  intro PorQ,
+  cases PorQ with p q,
+
+  intro notp,
+  contradiction,
+
+  intro notq,
+  exact q,
+
 end
 
 
