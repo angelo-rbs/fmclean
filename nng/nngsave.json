@@ -41,7 +41,7 @@
     },
     {
       "lean": "theorem succ_eq_add_one (n : mynat) : succ n = n + 1 :=\n",
-      "editorText": "sorry"
+      "editorText": "induction n with d hd,\nrw zero_add,\nrw one_eq_succ_zero,\nrefl,\n\nrw one_eq_succ_zero,\nrw succ_add,\nrw add_succ d,\nrw add_zero,\nrefl,"
     },
     {
       "lean": "lemma add_right_comm (a b c : mynat) : a + b + c = a + c + b :=\n",
