@@ -37,7 +37,7 @@
     },
     {
       "lean": "lemma add_comm (a b : mynat) : a + b = b + a :=\n",
-      "editorText": "sorry"
+      "editorText": "induction b with d hd,\n\nrw add_zero,\nrw zero_add,\nrefl,\n\nrw add_succ,\nrw succ_add,\nrw hd,\nrefl,\n\n"
     },
     {
       "lean": "theorem succ_eq_add_one (n : mynat) : succ n = n + 1 :=\n",
