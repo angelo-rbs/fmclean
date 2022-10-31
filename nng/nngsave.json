@@ -29,27 +29,32 @@
     },
     {
       "lean": "lemma add_assoc (a b c : mynat) : (a + b) + c = a + (b + c) :=\n",
+      "isSolved": true,
       "editorText": "induction c with d hd,\n\nrw add_zero,\nrw add_zero,\nrefl,\n\nrw add_succ,\nrw add_succ,\nrw add_succ,\nrw hd,\nrefl,"
     },
     {
       "lean": "lemma succ_add (a b : mynat) : succ a + b = succ (a + b) :=\n",
+      "isSolved": true,
       "editorText": "induction b with h hd,\n\nrw add_zero a,\nrw add_zero (succ a),\nrefl,\n\nrw add_succ a,\nrw add_succ,\nrw hd,\nrefl,"
     },
     {
       "lean": "lemma add_comm (a b : mynat) : a + b = b + a :=\n",
+      "isSolved": true,
       "editorText": "induction b with d hd,\n\nrw add_zero,\nrw zero_add,\nrefl,\n\nrw add_succ,\nrw succ_add,\nrw hd,\nrefl,\n\n"
     },
     {
       "lean": "theorem succ_eq_add_one (n : mynat) : succ n = n + 1 :=\n",
+      "isSolved": true,
       "editorText": "induction n with d hd,\nrw zero_add,\nrw one_eq_succ_zero,\nrefl,\n\nrw one_eq_succ_zero,\nrw succ_add,\nrw add_succ d,\nrw add_zero,\nrefl,"
     },
     {
       "lean": "lemma add_right_comm (a b c : mynat) : a + b + c = a + c + b :=\n",
+      "isSolved": true,
       "editorText": "induction c with d hd,\nrw add_zero,\nrw add_zero a,\nrefl,\n\nrw add_succ,\nrw hd,\nrw add_succ a,\nrw succ_add,\nrefl,\n"
     },
     {
       "lean": "lemma zero_mul (m : mynat) : 0 * m = 0 :=\n",
-      "editorText": "sorry"
+      "editorText": "induction m with d hd,\nrw mul_zero,\nrefl,\n\nrw mul_succ,\nrw hd,\nrw add_zero,\nrefl,"
     },
     {
       "lean": "lemma mul_one (m : mynat) : m * 1 = m :=\n",
