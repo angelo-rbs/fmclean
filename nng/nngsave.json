@@ -54,6 +54,7 @@
     },
     {
       "lean": "lemma zero_mul (m : mynat) : 0 * m = 0 :=\n",
+      "isSolved": true,
       "editorText": "induction m with d hd,\nrw mul_zero,\nrefl,\n\nrw mul_succ,\nrw hd,\nrw add_zero,\nrefl,"
     },
     {
@@ -68,6 +69,7 @@
     },
     {
       "lean": "lemma mul_add (t a b : mynat) : t * (a + b) = t * a + t * b :=\n",
+      "isSolved": true,
       "editorText": "induction a with ga ha,\ninduction b with gb hb,\n\nrw add_zero,\nrw mul_zero,\nrw add_zero,\nrefl,\n\nrw add_succ,\nrw mul_succ,\nrw hb,\nrw mul_succ,\nrw add_assoc,\nrefl,\n\nrw succ_add,\nrw mul_succ,\nrw ha,\nrw mul_succ,\nrw add_right_comm,\nrefl,\n\n\n\n\n"
     },
     {
@@ -86,7 +88,7 @@
     },
     {
       "lean": "lemma mul_comm (a b : mynat) : a * b = b * a :=\n",
-      "editorText": "sorry"
+      "editorText": "induction b with d hd,\n\nrw mul_zero,\nrw zero_mul,\nrefl,\n\nrw mul_succ,\nrw succ_mul,\nrw hd,\nrefl,"
     },
     {
       "lean": "lemma mul_left_comm (a b c : mynat) : a * (b * c) = b * (a * c) :=\n",
